@@ -6,19 +6,38 @@
     left: 0;
 }
 
-.bluebackground
+.darkbluebackground
 {
-    background-color: blue;
+    background-color: rgba(30,30,52,100);
 }
 
-.dodgerbluebutton
+.darkdodgerbluebutton
 {
-    background-color: dodgerblue;
-    border: 2px solid white;
+    background-color: rgba(40,40,52,100);
+    border: 2px solid rgba(144,144,144,255);
+    border-radius: 2px;
 }
 
 
-.whitetext
+.darkwhitetext
 {
-    color: white;
+    color: rgba(144,144,144,255);
+}
+
+.darkwhiteborder
+{
+    border: 2px solid rgba(144,144,144,255);
+}
+
+a
+{
+    font-size: 16.3px;
+}
+
+.stretched-image
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }

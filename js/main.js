@@ -5,7 +5,22 @@ $( document ).ready(function() {
     });
 });
 */
-function buttonResult()
-{
-    alert("This is a popup.")
+function buttonResult() {
+  const input = document.getElementById("devmode").value;
+  try {
+    const result = eval(input); // Evaluate the JS code
+    if (result !== undefined) {
+      console.log(result); // Log results like 2 + 2
+      alert("Result: " + result);
+    } else {
+      alert("Executed: " + input);
+    }
+  } catch (e) {
+    alert("Error: " + e.message);
+  }
 }
+
+
+
+
+
