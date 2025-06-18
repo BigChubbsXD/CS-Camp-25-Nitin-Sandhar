@@ -34,6 +34,15 @@ a
     font-size: 14.8px;
 }
 
+.filtered-image
+{
+    transition: filter 1s ease;
+}
+
+.filtered-image:hover{
+    filter:brightness(350%);
+}
+
 .stretched-image
 {
     width: 100%;
