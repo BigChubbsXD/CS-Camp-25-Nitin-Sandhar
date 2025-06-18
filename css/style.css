@@ -5,3 +5,20 @@
     top: 0;
     left: 0;
 }
+
+.bluebackground
+{
+    background-color: blue;
+}
+
+.dodgerbluebutton
+{
+    background-color: dodgerblue;
+    border: 2px solid white;
+}
+
+
+.whitetext
+{
+    color: white;
+}
