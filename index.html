@@ -2,31 +2,39 @@
         <link rel="stylesheet" href="/css/style.css">
 <html class = "darkbluebackground darkwhitetext">
     <head>
-    <title>Nitin's Website</title>
+    <title>Moon</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- This is the title of the webpage shown in the browser tab -->
   </head>
   <body>
-    <h1>Nitin's Webpage</h1>
+    <h1>Introduction</h1>
       <hr class="darkwhiteborder">
       <div>
     <!-- Below is a paragraph -->
-    <p>This is Nitin's website.</p>
+    <p>This is Nitin's website. It has various features such as a built in console
+       that allows you to run JavaScript commands. There is also an image gallery 
+       as well as useful links.
+    </p>
     <br>
     <h1>Built in Console</h1>
     <hr class="darkwhiteborder">
+    <div class = "buttonandtext">
     <input type="text" id = "devmode" class = "darkdodgerbluebutton darkwhitetext glow" placeholder = "Type in a command" required>
     <button onclick = "buttonResult()" type = "submit" id = "button" class = "darkdodgerbluebutton darkwhitetext glow">Submit</button>
+    </div>
     <script src="/js/main.js"></script>
     </body>
     <br>
     <h1>Image Gallery</h1>
     <hr class="darkwhiteborder">
 <img src="coolsky.jpg" class = "stretched-image filtered-image">
+<br>
+<br>
+<img src="cityskyline.png" class = "stretched-image filtered-image">
 
 
 
-
+<div class = "linkbox">
   <h1>Useful Links</h1>
       <ol>
         <li><a class = "darkwhitetext" href="https://www.google.com">Go to Google</a></li>
@@ -43,5 +51,6 @@
         <li><a class = "darkwhitetext" href="https://www.linuxmint.com">Go to Linux Mint</a></li> 
         <li><a class = "darkwhitetext" href="https://www.archlinux.org">Go to Arch Linux</a></li> 
       </ol>
+      </div>
 </html>
 
