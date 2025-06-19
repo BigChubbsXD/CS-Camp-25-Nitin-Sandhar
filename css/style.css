@@ -91,7 +91,8 @@ h1, p, ol, li, a
 
 .linkbox
 {
-      display: flex;
+  padding-right: 0px;
+  display: flex;
   flex-direction: column;
   align-items: center; /* centers both h1 and list */
   gap: 10px;
@@ -128,8 +129,8 @@ button
 
 .linkbox ol {
   list-style-position: inside;
-  padding-left: 0;
-  margin: 0;
+  padding-left: 0px;
+  margin: 0px;
   font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
 }
 
