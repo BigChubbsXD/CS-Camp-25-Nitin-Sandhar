@@ -23,7 +23,6 @@
     <input type="text" id = "devmode" class = "darkdodgerbluebutton darkwhitetext glow" placeholder = "Type in a command" required>
     <button onclick = "buttonResult()" type = "submit" id = "button" class = "darkdodgerbluebutton darkwhitetext glow">Submit</button>
     </div>
-    <script src="/js/main.js"></script>
     </body>
     <br>
     <h1>Image Gallery</h1>
@@ -32,11 +31,24 @@
 <br>
 <br>
 <img src="cityskyline.png" class = "stretched-image filtered-image">
+<div class ="textadventure">
+<h1>Text Adventure</h1>
 
+<hr class="darkwhiteborder">
+<div class = "buttonandtext" id ="story">
+
+</div>
+<input type="text" id = "storymode" class = "darkdodgerbluebutton darkwhitetext glow" placeholder = "What do you do?" required>
+<button onclick = "processInput()" type = "submit" id = "button" class = "darkdodgerbluebutton darkwhitetext glow">Submit</button>
+</div>
+<script src="/js/main.js"></script>
 
 
 <div class = "linkbox">
   <h1>Useful Links</h1>
+  </div>
+  <hr class="darkwhiteborder">
+  <div class = "linkbox">
       <ol>
         <li><a class = "darkwhitetext" href="https://www.google.com">Go to Google</a></li>
         <li><a class = "darkwhitetext" href="https://www.yahoo.com">Go to Yahoo</a></li> 
@@ -53,5 +65,6 @@
         <li><a class = "darkwhitetext" href="https://www.archlinux.org">Go to Arch Linux</a></li> 
       </ol>
       </div>
+      
 </html>
 
