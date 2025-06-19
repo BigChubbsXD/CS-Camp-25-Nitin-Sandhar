@@ -127,12 +127,6 @@ button
     padding: 4px 8px;
 }
 
-.linkbox ol {
-  list-style-position: inside;
-  padding-left: 0px;
-  margin: 0px;
-  font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
-}
 
 ::selection
 {
