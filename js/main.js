@@ -7,6 +7,10 @@ $( document ).ready(function() {
 */
 function buttonResult() {
   const input = document.getElementById("devmode").value;
+   if (input.trim() === "") {
+    alert("Please enter a command.");
+    return;
+  }
   try {
     const result = eval(input); // Evaluate the JS code
     if (result !== undefined) {
