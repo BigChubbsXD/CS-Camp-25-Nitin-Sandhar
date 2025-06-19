@@ -32,6 +32,11 @@
 a
 {
     font-size: 14.8px;
+    transition: filter 0.1s ease;
+}
+a:hover
+{
+    filter:brightness(220%);
 }
 
 .filtered-image
@@ -49,4 +54,13 @@ a
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+.glow
+{
+    transition: filter 0.1s ease;
+}
+
+.glow:hover{
+    filter:brightness(220%);
 }
