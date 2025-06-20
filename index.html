@@ -17,7 +17,7 @@
        that allows you to run JavaScript commands.<br> There is also an image gallery 
        as well a text adventure game with three story types and useful links.<br> When you complete the text adventure game,
        refresh the website to play it again.<br> You can also type location.reload(); into the built in console
-       to refresh it.
+       to refresh it.<br> You can also save and load text files.
     </p>
     <br>
     <h1>Built in Console</h1>
@@ -61,7 +61,53 @@
         <a class = "darkwhitetext" href="https://www.linuxmint.com">Go to Linux Mint</a>
         <a class = "darkwhitetext" href="https://www.archlinux.org">Go to Arch Linux</a>
       </div>
+
+      <h1>Save and Load Text</h1>
+    <hr class="darkwhiteborder">
       
+<div class = "textadventure">
+  <p>This is where you can create a text file and read from it.</p>
+<label for="fileInput" class="darkdodgerbluebutton darkwhiteText glow" style="font-size: 13px; padding: 4px 6px;">Choose Text File</label>
+<input type="file" id="fileInput" style="display: none;">
+<br><br>
+<pre id="output" class= "output-box"></pre>
+</div>
+
+
+<script>
+  document.getElementById('fileInput').addEventListener('change', function () {
+    const file = this.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      document.getElementById('output').textContent = reader.result;
+    };
+
+    if (file) {
+      reader.readAsText(file);
+    }
+  });
+</script>
+<div class = "textadventure">
+   <button onclick="saveFile()" class = "darkdodgerbluebutton darkwhitetext glow">Save Text File</button>
+</div>
+<script>
+  function saveFile() {
+    const userInput = prompt("Type something to save in a .txt file:");
+    
+    if (userInput !== null) {
+      const blob = new Blob([userInput], { type: 'text/plain' });
+      const link = document.createElement('a');
+      
+      link.href = URL.createObjectURL(blob);
+      link.download = 'user_input.txt';
+      link.click();
+
+      URL.revokeObjectURL(link.href); // Cleanup
+    }
+  }
+</script>
+
     <h1>Image Gallery</h1>
     <hr class="darkwhiteborder">
 <img src="coolsky.jpg" class = "stretched-image filtered-image">
