@@ -1,14 +1,9 @@
 function activateSecretFeature() {
   document.body.classList.add("golden");
 
-  console.log("secretText:", document.getElementById("secretchange"));
-
-
   const secretText = document.getElementById("secretchange");
   if (secretText) {
     secretText.textContent = "✨ The golden power has awakened! ✨";
-  } else {
-    console.warn("#secretchange not found.");
   }
 
   for (let i = 0; i < 50; i++) {
@@ -24,9 +19,22 @@ function activateSecretFeature() {
     document.body.classList.remove("golden");
 
     if (secretText) {
-      secretText.textContent = "There is a secret on this page...";
+      secretText.textContent = "There is a secret...";
     }
 
     document.querySelectorAll('.sparkle').forEach(el => el.remove());
   }, 10000);
 }
+
+// 👇 Immediately trigger golden mode when <p> is clicked
+document.addEventListener("DOMContentLoaded", () => {
+  const secretParagraph = document.getElementById("secretchange");
+  if (secretParagraph) {
+    secretParagraph.style.cursor = "pointer";
+    secretParagraph.title = "Click to unlock the secret...";
+
+    secretParagraph.addEventListener("click", () => {
+      activateSecretFeature();
+    });
+  }
+});

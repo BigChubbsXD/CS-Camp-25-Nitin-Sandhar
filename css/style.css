@@ -13,24 +13,17 @@ html{
     z-index: -1;
 }
 
-#secret-button {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-  width: 5%;
-  height: 20px;
-  opacity: 0.05;
-  background: transparent;
-  border: none;
-  z-index: 9999;
+#secretchange {
   cursor: pointer;
+  text-decoration: underline dotted;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
-#secret-button:hover {
-  opacity: 0.2;
+#secretchange:hover {
+  color: gold;
+  text-shadow: 0 0 8px gold;
 }
+
 
 /* GOLDEN OVERRIDE for .container */
 body.golden .container {
