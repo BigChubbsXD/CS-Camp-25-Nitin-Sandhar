@@ -3,7 +3,7 @@ function activateSecretFeature() {
 
   const secretText = document.getElementById("secretchange");
   if (secretText) {
-    secretText.textContent = "✨ The golden power has awakened! ✨";
+    secretText.textContent = "e";
   }
 
   for (let i = 0; i < 50; i++) {

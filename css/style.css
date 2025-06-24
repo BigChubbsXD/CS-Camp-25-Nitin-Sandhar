@@ -15,13 +15,21 @@ html{
 
 #secretchange {
   cursor: pointer;
+  opacity: 0.01;
   text-decoration: underline dotted;
   transition: color 0.3s, text-shadow 0.3s;
 }
 
 #secretchange:hover {
+  opacity: 0.1;
   color: gold;
   text-shadow: 0 0 8px gold;
+}
+
+body.golden #secretchange {
+  opacity: 1 !important;
+  color: gold !important;
+  text-shadow: 0 0 8px gold, 0 0 12px #fff700;
 }
 
 
