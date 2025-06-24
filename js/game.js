@@ -1,12 +1,12 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
-let gameStarted = false;
 
+let gameStarted = false;
+let isPaused = false;
 
 const gravity = 0.5;
 const jumpForce = -12;
 const speed = 2;
-let isPaused = false;
 
 let score = 0;
 let bestScore = 0;
@@ -19,25 +19,6 @@ let player = {
   dy: 0,
   onGround: false
 };
-
-document.addEventListener("keydown", e => {
-  if (e.code === "Enter") {
-    gameStarted = true;
-  }
-
-  if (!gameStarted) return;
-
-  if (e.code === "KeyP") {
-    isPaused = !isPaused;
-  }
-
-  if (e.code === "Space" && player.onGround) {
-    player.dy = jumpForce;
-    player.onGround = false;
-    e.preventDefault(); // also prevents scroll
-  }
-});
-
 
 let platforms = [];
 
@@ -63,17 +44,26 @@ window.addEventListener("keydown", e => {
   }
 });
 
-// Jump input
+// Single unified keydown listener
 document.addEventListener("keydown", e => {
+  if (e.code === "Enter") {
+    gameStarted = true;
+  }
+
+  if (!gameStarted) return;
+
+  if (e.code === "KeyP") {
+    isPaused = !isPaused;
+  }
+
   if (e.code === "Space" && player.onGround) {
     player.dy = jumpForce;
     player.onGround = false;
+    e.preventDefault();
   }
 });
 
 function update() {
-  if (isPaused) return;
-
   const prevY = player.y;
 
   player.dy += gravity;
@@ -164,20 +154,20 @@ function draw() {
     ctx.textAlign = "center";
     ctx.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
   }
-  if (!gameStarted) {
-  ctx.fillStyle = "white";
-  ctx.font = "bold 24px monospace";
-  ctx.textAlign = "center";
-  ctx.fillText("Press Enter to Start", canvas.width / 2, canvas.height / 2);
-}
 
+  // Start prompt
+  if (!gameStarted) {
+    ctx.fillStyle = "white";
+    ctx.font = "bold 24px monospace";
+    ctx.textAlign = "center";
+    ctx.fillText("Press Enter to Start", canvas.width / 2, canvas.height / 2);
+  }
 }
 
 function loop() {
-    if (gameStarted) {
+  if (gameStarted && !isPaused) {
     update();
   }
-  update();
   draw();
   requestAnimationFrame(loop);
 }
