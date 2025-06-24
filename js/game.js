@@ -1,5 +1,7 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
+let gameStarted = false;
+
 
 const gravity = 0.5;
 const jumpForce = -12;
@@ -19,10 +21,23 @@ let player = {
 };
 
 document.addEventListener("keydown", e => {
+  if (e.code === "Enter") {
+    gameStarted = true;
+  }
+
+  if (!gameStarted) return;
+
   if (e.code === "KeyP") {
     isPaused = !isPaused;
   }
+
+  if (e.code === "Space" && player.onGround) {
+    player.dy = jumpForce;
+    player.onGround = false;
+    e.preventDefault(); // also prevents scroll
+  }
 });
+
 
 let platforms = [];
 
@@ -149,9 +164,19 @@ function draw() {
     ctx.textAlign = "center";
     ctx.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
   }
+  if (!gameStarted) {
+  ctx.fillStyle = "white";
+  ctx.font = "bold 24px monospace";
+  ctx.textAlign = "center";
+  ctx.fillText("Press Enter to Start", canvas.width / 2, canvas.height / 2);
+}
+
 }
 
 function loop() {
+    if (gameStarted) {
+    update();
+  }
   update();
   draw();
   requestAnimationFrame(loop);
