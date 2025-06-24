@@ -1,4 +1,4 @@
-/*
+
 function activateSecretFeature() {
   document.body.classList.add("golden");
 
@@ -23,4 +23,3 @@ document.addEventListener("keydown", () => {
     activateSecretFeature();
   }
 });
-*/
