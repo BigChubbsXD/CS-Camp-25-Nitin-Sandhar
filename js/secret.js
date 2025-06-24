@@ -1,6 +1,16 @@
 function activateSecretFeature() {
   document.body.classList.add("golden");
 
+  console.log("secretText:", document.getElementById("secretchange"));
+
+
+  const secretText = document.getElementById("secretchange");
+  if (secretText) {
+    secretText.textContent = "✨ The golden power has awakened! ✨";
+  } else {
+    console.warn("#secretchange not found.");
+  }
+
   for (let i = 0; i < 50; i++) {
     const sparkle = document.createElement("div");
     sparkle.className = "sparkle";
@@ -12,17 +22,11 @@ function activateSecretFeature() {
 
   setTimeout(() => {
     document.body.classList.remove("golden");
+
+    if (secretText) {
+      secretText.textContent = "There is a secret on this page...";
+    }
+
     document.querySelectorAll('.sparkle').forEach(el => el.remove());
   }, 10000);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("secret-button");
-
-  button.addEventListener("click", () => {
-    const input = prompt("Enter the secret command:");
-    if (input && input.toLowerCase() === "secret") {
-      activateSecretFeature();
-    }
-  });
-});
