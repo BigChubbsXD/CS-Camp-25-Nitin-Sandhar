@@ -39,10 +39,10 @@ html.golden::before {
   text-align: center;
   position: relative;
   z-index: 10000;
-  opacity: 0.2;
+  opacity: 0.05;
 }
 #secretchange:hover {
-  opacity: 0.3;
+  opacity: 0.1;
   color: gold;
   text-shadow: 0 0 8px gold;
   z-index: 10000;
@@ -97,6 +97,9 @@ canvas
   border: none;
   position: relative;
   margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
