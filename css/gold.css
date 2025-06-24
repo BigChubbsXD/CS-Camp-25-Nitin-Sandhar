@@ -35,6 +35,8 @@ html.golden::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;   
+  text-align: center;
   position: relative;
   z-index: 10000;
   opacity: 0.2;
