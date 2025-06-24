@@ -13,6 +13,8 @@ html{
     z-index: -1;
 }
 
+/*
+
 html.golden {
   background-color: gold !important;
   color: gold !important;
@@ -49,7 +51,7 @@ body.golden {
   }
 }
 
-
+*/
 .container
 {
     display: flex;
