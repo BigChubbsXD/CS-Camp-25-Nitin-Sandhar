@@ -33,14 +33,19 @@ html.golden::before {
 
 #secretchange {
   position: relative;
+  display: inline-block;  /* shrink to fit content */
   z-index: 10000;
-  background-color: red; /* TEMP for debug */
+  opacity: 0.2;
+  padding: 4px 8px;       /* optional, for spacing */
+  margin: auto;           /* centers if inside a block element */
+  background-color: rgba(255, 0, 0, 0.1); /* for visual testing */
+  cursor: pointer;
 }
+
 #secretchange:hover {
   opacity: 0.3;
   color: gold;
   text-shadow: 0 0 8px gold;
-  z-index: 10000;
 }
 
 
