@@ -54,6 +54,12 @@ canvas
   font-size: 14px;
 }
 
+.fullwidthhr {
+  width: 100vw;            /* Full viewport width */
+  margin-left: calc(-50vw + 50%);  /* Cancel out centering if inside a container */
+}
+
+
 
 
 .output-box {
