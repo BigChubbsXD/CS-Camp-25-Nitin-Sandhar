@@ -3,7 +3,7 @@ function activateSecretFeature() {
 
   const secretText = document.getElementById("secretchange");
   if (secretText) {
-    secretText.textContent = "e";
+    secretText.textContent = "You found the secret!";
   }
 
   for (let i = 0; i < 50; i++) {
