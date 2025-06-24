@@ -1,11 +1,17 @@
 function activateSecretFeature() {
-  document.body.classList.add("golden");
+  document.documentElement.classList.add("golden");
+
+  const container = document.querySelector(".container");
+  if (container) {
+    container.classList.add("golden"); // ✅ THIS IS REQUIRED
+  }
 
   const secretText = document.getElementById("secretchange");
   if (secretText) {
     secretText.textContent = "You found the secret!";
   }
 
+  // Sparkles...
   for (let i = 0; i < 50; i++) {
     const sparkle = document.createElement("div");
     sparkle.className = "sparkle";
@@ -18,23 +24,15 @@ function activateSecretFeature() {
   setTimeout(() => {
     document.body.classList.remove("golden");
 
+    if (container) {
+      container.classList.remove("golden"); // ✅ Clean up
+    }
+
     if (secretText) {
       secretText.textContent = "There is a secret...";
     }
 
-    document.querySelectorAll('.sparkle').forEach(el => el.remove());
+    document.querySelectorAll(".sparkle").forEach(el => el.remove());
   }, 10000);
 }
 
-// 👇 Immediately trigger golden mode when <p> is clicked
-document.addEventListener("DOMContentLoaded", () => {
-  const secretParagraph = document.getElementById("secretchange");
-  if (secretParagraph) {
-    secretParagraph.style.cursor = "pointer";
-    secretParagraph.title = "Click to unlock the secret...";
-
-    secretParagraph.addEventListener("click", () => {
-      activateSecretFeature();
-    });
-  }
-});

@@ -1,0 +1,313 @@
+html {
+  position: relative;
+  background-image: url('../images/backgroundnight.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+h/* Always reserve ::before layer */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+/* This will apply correctly in golden mode */
+html.golden::before {
+  background-color: red; /* or background-image */
+  opacity: 1;
+}
+
+#secretchange {
+  cursor: pointer;
+  opacity: 0.01;
+  text-decoration: underline dotted;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#secretchange:hover {
+  opacity: 0.1;
+  color: gold;
+  text-shadow: 0 0 8px gold;
+}
+
+
+.container
+{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    background-color: rgba(30,30,52,100);
+    border: 4px solid rgba(144,144,144,255);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+canvas
+{
+    border: 4px solid rgba(144,144,144,255);
+    border-radius: 10px;
+    display: block;
+}
+
+#drawing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#control-panel {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#control-panel * {
+  margin: 5px;
+  font-size: 14px;
+}
+
+.fullwidthhr {
+  width: 100vw;            /* Full viewport width */
+  margin-left: calc(-50vw + 50%);  /* Cancel out centering if inside a container */
+  border: none;
+  position: relative;
+  margin: 20px 0;
+}
+
+
+
+.darkbluebackground
+{
+    background-color: rgba(30,30,52,100);
+}
+
+.darkdodgerbluebutton
+{
+    background-color: rgba(40,40,52,100);
+    border: 2px solid rgba(144,144,144,255);
+    border-radius: 2px;
+}
+
+
+.darkwhitetext
+{
+    color: rgba(144,144,144,255);
+    font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
+}
+
+.darkwhiteborder
+{
+    border: 2px solid rgba(144,144,144,255);
+}
+
+a
+{
+    font-size: 14.8px;
+    transition: filter 0.1s ease;
+    font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
+}
+a:hover
+{
+    filter:brightness(220%);
+}
+
+.stretched-image
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    z-index: -1;
+    mix-blend-mode: normal;
+    pointer-events: none;
+    border: 4px solid rgba(144,144,144,255);
+    box-sizing: border-box;
+}
+
+.glow
+{
+    transition: filter 0.1s ease;
+}
+
+.glow:hover{
+    filter:brightness(220%);
+}
+
+h1, p, ol, li, a
+{
+    list-style-position: inside;
+    text-align: center;    
+    font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
+}
+
+.buttonandtext
+{
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
+}
+
+.linkbox
+{
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers both h1 and list */
+  gap: 10px;
+  font-family: "Segoe UI Variable", "Segoe UI", "Helvetica Neue"
+}
+
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 6px #ffd700, 0 0 12px #ffa500; }
+  50% { box-shadow: 0 0 12px #ffd700, 0 0 24px #ffa500; }
+  100% { box-shadow: 0 0 6px #ffd700, 0 0 12px #ffa500; }
+}
+
+
+.sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleAnim ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleAnim {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-50px);
+    opacity: 0;
+  }
+}
+
+
+.container.golden
+{
+     box-shadow: 0 0 30px gold;
+}
+
+
+body.golden #secretchange {
+  opacity: 1 !important;
+  color: gold !important;
+  text-shadow: 0 0 8px gold, 0 0 12px #fff700;
+}
+
+
+body.golden canvas {
+  border: 3px solid #fff700 !important;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
+}
+
+body.golden #control-panel button {
+  background-color: #fff8dc;
+  border-color: #ffd700;
+  color: #b8860b;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+
+
+/* Golden mode override */
+body.golden #control-panel input[type="color"] {
+  border-color: #ffd700;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+body.golden hr {
+  background: linear-gradient(90deg, #fff8dc, #ffd700, #fff8dc);
+  box-shadow: 0 0 8px #ffd700, 0 0 16px #ffa500;
+  border: 2px solid #fff700;
+  animation: shimmer 3s linear infinite;
+}
+
+body.golden * {
+  
+  color: #fff8dc !important;
+  text-shadow:
+    0 0 4px #ffd700,
+    0 0 8px #ffdf00,
+    0 0 12px #ffcc00,
+    0 0 16px #ffa500;
+  transition: all 0.3s ease;
+}
+
+
+body.golden::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/secretbackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1; /* Adjust as needed */
+  z-index: -9999;
+  pointer-events: none;
+}
+
+/*GOLDEN OVERRIDE for .container*/
+body.golden .container {
+  background-color: saddlebrown !important;
+  border-color: #fff700 !important;
+  box-shadow: 0 0 30px #ffd700, 0 0 60px #ffa500;
+  z-index: 100;
+}
+
+/* shimmer gradient glow for ALL text 
+body.golden *:not(script):not(style) {
+  
+  background: linear-gradient(90deg, #fff8dc, #ffd700, #fff8dc);
+  background-size: 200% auto;
+  color: transparent !important;
+  
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 2.5s linear infinite;
+  text-shadow: none !important;
+}
+*/
