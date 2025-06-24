@@ -57,6 +57,9 @@ canvas
 .fullwidthhr {
   width: 100vw;            /* Full viewport width */
   margin-left: calc(-50vw + 50%);  /* Cancel out centering if inside a container */
+  border: none;
+  position: relative;
+  margin: 20px 0;
 }
 
 
