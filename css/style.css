@@ -6,7 +6,7 @@
     left: 0;
 }
 html{
-    background-image: url('images/backgroundnight.jpg');
+    background-image: url('../images/backgroundnight.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
