@@ -33,7 +33,7 @@ function activateSecretFeature() {
     }
 
     if (secretText) {
-      secretText.textContent = "There is a secret...";
+      secretText.textContent = "secret...";
     }
 
     document.querySelectorAll(".sparkle").forEach(el => el.remove());

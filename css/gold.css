@@ -32,6 +32,9 @@ html.golden::before {
 }
 
 #secretchange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: 10000;
   opacity: 0.2;
