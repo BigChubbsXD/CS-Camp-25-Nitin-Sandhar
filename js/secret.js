@@ -1,4 +1,3 @@
-
 function activateSecretFeature() {
   document.body.classList.add("golden");
 
@@ -17,9 +16,13 @@ function activateSecretFeature() {
   }, 10000);
 }
 
-document.addEventListener("keydown", () => {
-  const input = prompt("Enter the secret command:");
-  if (input && input.toLowerCase() === "secret") {
-    activateSecretFeature();
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("secret-button");
+
+  button.addEventListener("click", () => {
+    const input = prompt("Enter the secret command:");
+    if (input && input.toLowerCase() === "secret") {
+      activateSecretFeature();
+    }
+  });
 });

@@ -13,6 +13,23 @@ html{
     z-index: -1;
 }
 
+#secret-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.05; /* Nearly invisible */
+  background: transparent;
+  border: none;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+#secret-button:hover {
+  opacity: 0.15; /* Slightly visible on hover for testing */
+}
+
 
 
 html.golden {
