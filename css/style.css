@@ -13,8 +13,16 @@ html{
     z-index: -1;
 }
 
+html.golden {
+  background-color: gold !important;
+  color: gold !important;
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+}
+
 body.golden {
   background-color: gold !important;
+  color: gold !important;
   transition: background-color 0.5s ease;
   overflow: hidden;
 }
