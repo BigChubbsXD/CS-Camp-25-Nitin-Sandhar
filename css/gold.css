@@ -32,16 +32,15 @@ html.golden::before {
 }
 
 #secretchange {
-  cursor: pointer;
-  opacity: 0.01;
-  text-decoration: underline dotted;
-  transition: color 0.3s, text-shadow 0.3s;
+  position: relative;
+  z-index: 10000;
+  background-color: red; /* TEMP for debug */
 }
-
 #secretchange:hover {
-  opacity: 0.1;
+  opacity: 0.3;
   color: gold;
   text-shadow: 0 0 8px gold;
+  z-index: 10000;
 }
 
 
