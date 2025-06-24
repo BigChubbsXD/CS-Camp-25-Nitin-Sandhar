@@ -33,7 +33,6 @@ html.golden::before {
 
 #secretchange {
   position: relative;
-  display: inline-block;  /* shrink to fit content */
   z-index: 10000;
   opacity: 0.2;
 }
