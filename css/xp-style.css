@@ -148,6 +148,9 @@ html, body {
   cursor: pointer;
   height: 26px;
   user-select: none;
+  margin-left: 0;
+  position: absolute;
+  left: 0;
 }
 
 .xp-start-button::before {
