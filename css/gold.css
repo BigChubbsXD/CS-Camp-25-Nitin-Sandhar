@@ -94,6 +94,7 @@ canvas
 
 body #control-panel button {
   background-color:  rgba(40,40,52,100);
+  color: rgba(144,144,144,255);
   border: 2px solid rgba(144,144,144,255);
   border-radius: 10px;
 
@@ -104,6 +105,7 @@ body #control-panel button {
 /* Golden mode override */
 body #control-panel input[type="color"] {
   background-color:  rgba(40,40,52,100);
+  color: rgba(144,144,144,255);
   border: 2px solid rgba(144,144,144,255);
   border-radius: 10px;
 
@@ -273,6 +275,7 @@ body.golden #control-panel button {
 
 /* Golden mode override */
 body.golden #control-panel input[type="color"] {
+  background-color: #fff8dc;
   border-color: #ffd700;
   border-radius: 10px;
   box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
