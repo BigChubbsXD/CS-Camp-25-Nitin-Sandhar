@@ -126,12 +126,33 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 0 4px;
   box-shadow: inset 0 1px #a3c0f0;
   border-top: 2px solid #0f3fa7;
   font-family: Tahoma, sans-serif;
   z-index: 999;
 }
+
+/* Left section: Start Button */
+.xp-taskbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: -60;
+}
+
+
+.xp-taskbar-center {
+  flex-grow: 1;
+}
+
+/* Right section: Clock */
+.xp-taskbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+}
+
+/* Start Button */
 
 /* Start Button */
 .xp-start-button {
@@ -148,11 +169,10 @@ html, body {
   cursor: pointer;
   height: 26px;
   user-select: none;
-  margin-left: 0;
-  position: absolute;
-  left: 0;
+  margin-left: -4px;
 }
 
+/* Start Button Icon */
 .xp-start-button::before {
   content: "";
   background: url('../images/xp-start-icon.png') no-repeat center center;
@@ -163,14 +183,27 @@ html, body {
   margin-right: 6px;
 }
 
+/* Clock Wrapper */
+.xp-taskbar-clock-wrapper {
+  background: rgba(12,155,240,255);
+  border: 1px solid #7aaedc;
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  height: 22px;
+  margin-right: 6px;
+}
+
+/* Clock Text */
 .xp-taskbar-clock {
-  color: white;
+  color: #ffffff;
   font-size: 13px;
-  padding-right: 16px; /* was 8px */
   font-weight: bold;
   text-shadow: 1px 1px 1px #000;
   user-select: none;
 }
+
 
 
 /* Task buttons placeholder (optional for future apps) */
