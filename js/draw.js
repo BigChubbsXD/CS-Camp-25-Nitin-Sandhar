@@ -4,14 +4,14 @@ let currentColor = '#000000';
 let currentBrushSize = 4;
 let canvas;
 let loadedImage;
-let bgGraphics;
+let bgGraphics, drawGraphics;
 
 function setup() {
   canvas = createCanvas(400, 400);
   canvas.parent('drawing-section');
-  background(255);
-
-  bgGraphics = createGraphics(400, 400); // To hold background image
+  
+  bgGraphics = createGraphics(400, 400);     // holds the background image
+  drawGraphics = createGraphics(400, 400);   // persistent drawing layer
 
   // Color Picker
   colorPicker = createColorPicker('#000000');
@@ -25,7 +25,7 @@ function setup() {
 
   // Save Button
   saveButton = createButton('Save');
-  saveButton.mousePressed(() => saveCanvas(canvas, 'drawing', 'png'));
+  saveButton.mousePressed(() => saveCanvas(drawGraphics, 'drawing', 'png')); // Save drawing only
   saveButton.parent('control-panel');
 
   loadInput = createFileInput(handleFile);
@@ -40,20 +40,21 @@ function setup() {
   clearButton = createButton('Clear');
   clearButton.mousePressed(() => {
     loadedImage = null;
-    bgGraphics.clear(); // Clear background
-    clear();
-    background(255);
+    bgGraphics.clear();
+    drawGraphics.clear();
   });
   clearButton.parent('control-panel');
 }
 
 function draw() {
   background(255);
-  image(bgGraphics, 0, 0, width, height); // draw background layer
-  stroke(currentColor);
-  strokeWeight(currentBrushSize);
-  if (mouseIsPressed && mouseY <= height) {
-    line(pmouseX, pmouseY, mouseX, mouseY);
+  image(bgGraphics, 0, 0);
+  image(drawGraphics, 0, 0);
+
+  if (mouseIsPressed && mouseY <= height && mouseY >= 0 && mouseX >= 0 && mouseX <= width) {
+    drawGraphics.stroke(currentColor);
+    drawGraphics.strokeWeight(currentBrushSize);
+    drawGraphics.line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
 
@@ -61,7 +62,7 @@ function handleFile(file) {
   if (file.type === 'image') {
     loadImage(file.data, img => {
       loadedImage = img;
-      bgGraphics.image(img, 0, 0, width, height); // Draw to background layer
+      bgGraphics.image(img, 0, 0, width, height);
     });
   } else {
     alert('Only image files are supported!');
