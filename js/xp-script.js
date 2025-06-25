@@ -16,63 +16,58 @@ function openWindow(title) {
   xpWindow.style.left = "100px";
   xpWindow.style.top = "100px";
 
-  switch (title) {
-    case "My Computer":
-      contentContainer.innerHTML = `
-        <div class="my-computer-window">
-          <div class="drive"><img src="images/hdd-icon.png" /> Local Disk (C:)</div>
-          <div class="drive"><img src="images/hdd-icon.png" /> Local Disk (D:)</div>
-          <div class="drive"><img src="images/hdd-icon.png" /> DVD Drive (E:)</div>
-          <div class="drive"><img src="images/folder-icon.png" /> Shared Documents</div>
-          <div class="drive"><img src="images/folder-icon.png" /> User's Documents</div>
-        </div>`;
-      break;
-
-    case "Recycle Bin":
-      contentContainer.innerHTML = `
-        <div class="recycle-bin-window">
-          <div class="recycle-item"><img src="images/file-icon.png" /> notes.txt</div>
-          <div class="recycle-item"><img src="images/file-icon.png" /> photo.png</div>
-          <div class="recycle-item"><img src="images/file-icon.png" /> old_resume.doc</div>
-          <button class="empty-bin-button">Empty Recycle Bin</button>
-        </div>`;
-      break;
-
-    case "My Documents":
-      contentContainer.innerHTML = "<p>Documents folder is currently empty.</p>";
-      break;
-
-    case "My Recent Documents":
-      contentContainer.innerHTML = "<ul><li>report.docx</li><li>notes.txt</li><li>budget.xlsx</li></ul>";
-      break;
-
-    case "My Pictures":
-      contentContainer.innerHTML = "<p>No pictures found. Try importing some!</p>";
-      break;
-
-    case "My Music":
-      contentContainer.innerHTML = "<p>Music library is not yet set up.</p>";
-      break;
-
-    case "Control Panel":
-      contentContainer.innerHTML = "<p>Control Panel is under construction.</p>";
-      break;
-
-    case "Printers and Faxes":
-      contentContainer.innerHTML = "<p>No printers or faxes installed.</p>";
-      break;
-
-    case "Run":
-      contentContainer.innerHTML = `
+  if (title === "My Computer") {
+    contentContainer.innerHTML = `
+      <div class="my-computer-window">
+        <div class="drive"><img src="images/hdd-icon.png" /> Local Disk (C:)</div>
+        <div class="drive"><img src="images/hdd-icon.png" /> Local Disk (D:)</div>
+        <div class="drive"><img src="images/hdd-icon.png" /> DVD Drive (E:)</div>
+        <div class="drive"><img src="images/folder-icon.png" /> Shared Documents</div>
+        <div class="drive"><img src="images/folder-icon.png" /> User's Documents</div>
+      </div>`;
+  } else if (title === "Recycle Bin") {
+    contentContainer.innerHTML = `
+      <div class="recycle-bin-window">
+        <div class="recycle-item"><img src="images/file-icon.png" /> notes.txt</div>
+        <div class="recycle-item"><img src="images/file-icon.png" /> photo.png</div>
+        <div class="recycle-item"><img src="images/file-icon.png" /> old_resume.doc</div>
+        <button class="empty-bin-button">Empty Recycle Bin</button>
+      </div>`;
+  } else if (title === "My Documents") {
+    contentContainer.innerHTML = "<p style='padding-left: 16px;'>Documents folder is currently empty.</p>";
+  } else if (title === "My Recent Documents") {
+    contentContainer.innerHTML = "<ul style='padding-left: 16px;'><li>report.docx</li><li>notes.txt</li><li>budget.xlsx</li></ul>";
+  } else if (title === "My Pictures") {
+    contentContainer.innerHTML = "<p style='padding-left: 16px;'>No pictures found. Try importing some!</p>";
+  } else if (title === "My Music") {
+    contentContainer.innerHTML = "<p style='padding-left: 16px;'>Music library is not yet set up.</p>";
+  } else if (title === "Control Panel") {
+    contentContainer.innerHTML = "<p style='padding-left: 16px;'>Control Panel is under construction.</p>";
+  } else if (title === "Printers and Faxes") {
+    contentContainer.innerHTML = "<p style='padding-left: 16px;'>No printers or faxes installed.</p>";
+  } else if (title === "Run") {
+    contentContainer.innerHTML = `
+      <div style='padding-left: 16px;'>
         <p>Type the name of a program, folder, document, or internet resource.</p>
         <input type="text" placeholder="e.g., calc" style="width: 90%; margin-bottom: 6px;" />
-        <button onclick="alert('Command not found.')">OK</button>`;
-      break;
-
-    default:
-      contentContainer.innerHTML = `<p>This is a placeholder app window.</p>`;
+        <button onclick="alert('Command not found.')">OK</button>
+      </div>`;
+  } else if (
+    [
+      "Internet Explorer", "Outlook Express", "Windows Media Player", "MSN",
+      "Windows Messenger", "Tour Windows XP", "Files and Settings Transfer Wizard"
+    ].includes(title)
+  ) {
+    contentContainer.innerHTML = `
+      <div style="padding-left: 16px;">
+        <p><strong>${title}</strong> has been uninstalled.</p>
+        <p>This feature is no longer available on this system.</p>
+      </div>`;
+  } else {
+    contentContainer.innerHTML = `<p style='padding-left: 16px;'>This is a placeholder app window.</p>`;
   }
 }
+
 
 function confirmExit() {
   if (confirm("Are you sure you want to exit to the website?")) {
