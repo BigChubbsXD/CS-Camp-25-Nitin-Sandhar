@@ -32,34 +32,41 @@ function setup() {
   brushSlider.parent(brushContainer);
   brushSlider.input(() => currentBrushSize = brushSlider.value());
 
-  // Save Button — saves both background + drawing
-  saveButton = createButton('Save');
-  saveButton.mousePressed(() => {
-    const combined = createGraphics(width, height);
-    combined.image(bgGraphics, 0, 0);
-    combined.image(drawGraphics, 0, 0);
-    save(combined, 'drawing_with_bg', 'png');
-  });
-  saveButton.parent('control-panel');
+ // Save Button
+saveButton = createButton('Save');
+saveButton.class('glow'); // Add glow class
+saveButton.mousePressed(() => {
+  const combined = createGraphics(width, height);
+  combined.image(bgGraphics, 0, 0);
+  combined.image(drawGraphics, 0, 0);
+  save(combined, 'drawing_with_bg', 'png');
+});
+saveButton.parent('control-panel');
 
   // Load Button Setup
   loadInput = createFileInput(handleFile);
   loadInput.elt.title = "Choose an image file";
   loadInput.elt.setAttribute("style", "opacity: 0; position: absolute; left: -9999px;");
   loadInput.parent('control-panel');
+// Load Button
+const loadButton = createButton('Load');
+loadButton.class('glow'); // Add glow class
+loadButton.mousePressed(() => loadInput.elt.click());
+loadButton.parent('control-panel');
 
-  const loadButton = createButton('Load');
-  loadButton.mousePressed(() => loadInput.elt.click());
-  loadButton.parent('control-panel');
+// Clear Button
+clearButton = createButton('Clear');
+clearButton.class('glow'); // Add glow class
+clearButton.mousePressed(() => {
+  loadedImage = null;
+  bgGraphics.clear();
+  drawGraphics.clear();
+});
+clearButton.parent('control-panel');
 
-  // Clear Button
-  clearButton = createButton('Clear');
-  clearButton.mousePressed(() => {
-    loadedImage = null;
-    bgGraphics.clear();
-    drawGraphics.clear();
-  });
-  clearButton.parent('control-panel');
+// Color Picker & Slider (if you want hover glow for those too)
+colorPicker.class('glow');
+brushSlider.class('glow');
 }
 
 function draw() {
