@@ -63,6 +63,7 @@ clearButton.mousePressed(() => {
   drawGraphics.clear();
 });
 clearButton.parent('control-panel');
+/*you suck*/
 
 // Color Picker & Slider (if you want hover glow for those too)
 colorPicker.class('glow');
