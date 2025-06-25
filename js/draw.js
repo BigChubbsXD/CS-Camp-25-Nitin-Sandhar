@@ -23,20 +23,27 @@ function setup() {
   brushSlider.parent('control-panel');
   brushSlider.input(() => currentBrushSize = brushSlider.value());
 
-  // Save Button
+  // Save Button — saves both background + drawing
   saveButton = createButton('Save');
-  saveButton.mousePressed(() => saveCanvas(drawGraphics, 'drawing', 'png')); // Save drawing only
+  saveButton.mousePressed(() => {
+    const combined = createGraphics(width, height);
+    combined.image(bgGraphics, 0, 0);
+    combined.image(drawGraphics, 0, 0);
+    save(combined, 'drawing_with_bg', 'png');
+  });
   saveButton.parent('control-panel');
 
+  // Load Button Setup
   loadInput = createFileInput(handleFile);
   loadInput.elt.title = "Choose an image file";
   loadInput.elt.setAttribute("style", "opacity: 0; position: absolute; left: -9999px;");
   loadInput.parent('control-panel');
 
-  let loadButton = createButton('Load');
+  const loadButton = createButton('Load');
   loadButton.mousePressed(() => loadInput.elt.click());
   loadButton.parent('control-panel');
 
+  // Clear Button
   clearButton = createButton('Clear');
   clearButton.mousePressed(() => {
     loadedImage = null;
@@ -51,7 +58,11 @@ function draw() {
   image(bgGraphics, 0, 0);
   image(drawGraphics, 0, 0);
 
-  if (mouseIsPressed && mouseY <= height && mouseY >= 0 && mouseX >= 0 && mouseX <= width) {
+  if (
+    mouseIsPressed &&
+    mouseY >= 0 && mouseY <= height &&
+    mouseX >= 0 && mouseX <= width
+  ) {
     drawGraphics.stroke(currentColor);
     drawGraphics.strokeWeight(currentBrushSize);
     drawGraphics.line(pmouseX, pmouseY, mouseX, mouseY);
