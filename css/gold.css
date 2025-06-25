@@ -111,6 +111,51 @@ body #control-panel input[type="color"] {
 
 }
 
+body #control-panel input[type="range"] {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 8px;
+  background: rgba(40, 40, 52, 1); /* dark background */
+  border-radius: 4px;
+}
+
+/* WebKit track */
+body #control-panel input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: rgba(144, 144, 144, 1); /* gray track */
+  border-radius: 4px;
+}
+
+/* WebKit thumb */
+body #control-panel input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: rgba(144, 144, 144, 1); /* gray thumb */
+  border: 2px solid rgba(144,144,144,1);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+/* Firefox track */
+body #control-panel input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: rgba(144, 144, 144, 1);
+  border-radius: 4px;
+}
+
+/* Firefox thumb */
+body #control-panel input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: rgba(144,144,144,1);
+  border: 2px solid rgba(144,144,144,1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
 .fullwidthhr {
   width: 100vw;            /* Full viewport width */
   margin-left: calc(-50vw + 50%);  /* Cancel out centering if inside a container */
@@ -338,3 +383,50 @@ body.golden *:not(script):not(style) {
   text-shadow: none !important;
 }
 */
+
+
+body.golden #control-panel input[type="range"] {
+  -webkit-appearance: none;
+  width: 150px;
+  height: 8px;
+  background: #fff8dc;
+  border-radius: 4px;
+}
+
+/* WebKit track */
+body.golden #control-panel input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: linear-gradient(to right, gold, orange);
+  border-radius: 4px;
+}
+
+/* WebKit thumb */
+body.golden #control-panel input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
+}
+
+/* Firefox track */
+body.golden #control-panel input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: linear-gradient(to right, gold, orange);
+  border-radius: 4px;
+}
+
+/* Firefox thumb */
+body.golden #control-panel input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
+}
