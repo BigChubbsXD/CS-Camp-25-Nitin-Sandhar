@@ -1,3 +1,4 @@
+
 let colorPicker, brushSlider;
 let saveButton, loadInput, clearButton;
 let currentColor = '#000000';
@@ -9,18 +10,26 @@ let bgGraphics, drawGraphics;
 function setup() {
   canvas = createCanvas(400, 400);
   canvas.parent('drawing-section');
-  
+
   bgGraphics = createGraphics(400, 400);     // holds the background image
   drawGraphics = createGraphics(400, 400);   // persistent drawing layer
 
-  // Color Picker
+  // Color Picker container
+  const colorContainer = createDiv();
+  colorContainer.parent('control-panel');
+  colorContainer.style('display', 'flex');
+  colorContainer.style('align-items', 'center');
   colorPicker = createColorPicker('#000000');
   colorPicker.input(() => currentColor = colorPicker.value());
-  colorPicker.parent('control-panel');
+  colorPicker.parent(colorContainer);
 
-  // Brush Size Slider
+  // Brush Size Slider container
+  const brushContainer = createDiv();
+  brushContainer.parent('control-panel');
+  brushContainer.style('display', 'flex');
+  brushContainer.style('align-items', 'center');
   brushSlider = createSlider(1, 20, 4);
-  brushSlider.parent('control-panel');
+  brushSlider.parent(brushContainer);
   brushSlider.input(() => currentBrushSize = brushSlider.value());
 
   // Save Button — saves both background + drawing
