@@ -245,6 +245,7 @@ body.golden canvas {
 body.golden #control-panel button {
   background-color: #fff8dc;
   border-color: #ffd700;
+  border-radius: 10px;
   color: #b8860b;
   box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
   animation: glowPulse 1.5s ease-in-out infinite;
@@ -255,6 +256,7 @@ body.golden #control-panel button {
 /* Golden mode override */
 body.golden #control-panel input[type="color"] {
   border-color: #ffd700;
+  border-radius: 10px;
   box-shadow: 0 0 10px #ffd700, 0 0 20px #ffa500;
   animation: glowPulse 1.5s ease-in-out infinite;
 }
