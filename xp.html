@@ -7,48 +7,79 @@
     <link rel="stylesheet" href="css/xp-style.css" />
   </head>
   <body>
-<div class="xp-icon" style="--icon-top: 20px;" onclick="openWindow('My Computer')">
-  <img src="images/mycomputer.png" alt="My Computer" />
-  <span>My Computer</span>
-</div>
 
-<div class="xp-icon" style="--icon-top: 100px;" onclick="openWindow('Recycle Bin')">
-  <img src="images/recyclebin.png" alt="Recycle Bin" />
-  <span>Recycle Bin</span>
-</div>
+    <!-- Desktop Icons -->
+    <div class="xp-icon" style="--icon-top: 20px;" onclick="openWindow('My Computer')">
+      <img src="images/mycomputer.png" alt="My Computer" />
+      <span>My Computer</span>
+    </div>
 
-      <!-- Application Window -->
-      <div id="xp-window" class="xp-window hidden">
-        <div class="xp-window-header" onmousedown="startDrag(event)">
-          <span id="xp-window-title">Window</span>
-          <button onclick="closeWindow()">X</button>
+    <div class="xp-icon" style="--icon-top: 100px;" onclick="openWindow('Recycle Bin')">
+      <img src="images/recyclebin.png" alt="Recycle Bin" />
+      <span>Recycle Bin</span>
+    </div>
+
+    <!-- Application Window -->
+    <div id="xp-window" class="xp-window hidden">
+      <div class="xp-window-header" onmousedown="startDrag(event)">
+        <span id="xp-window-title">Window</span>
+        <button onclick="closeWindow(event)">X</button>
+      </div>
+      <div class="xp-window-content">
+        <p>This is a placeholder app window.</p>
+      </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="xp-taskbar">
+      <div class="xp-start-button" onclick="toggleStartMenu(event)">Start</div>
+      <div class="xp-taskbar-clock" id="xp-clock"></div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="xp-start-menu hidden" id="xp-start-menu">
+      <!-- Top User Bar -->
+      <div class="xp-start-menu-header">
+        <img src="images/dog.jpg" alt="User Icon">
+        Nitin Sandhar
+      </div>
+
+      <!-- Two-pane Body -->
+      <div class="xp-start-menu-body">
+        <!-- Left Pane: Programs -->
+        <div class="xp-start-menu-left">
+          <ul>
+            <li>Internet Explorer</li>
+            <li>Outlook Express</li>
+            <li>Windows Media Player</li>
+            <li>MSN</li>
+            <li>Windows Messenger</li>
+            <li>Tour Windows XP</li>
+            <li>Files and Settings Transfer Wizard</li>
+          </ul>
         </div>
-        <div class="xp-window-content">
-          <p>This is a placeholder app window.</p>
+
+        <!-- Right Pane: System Shortcuts -->
+        <div class="xp-start-menu-right">
+          <ul>
+            <li>My Documents</li>
+            <li>My Recent Documents</li>
+            <li>My Pictures</li>
+            <li>My Music</li>
+            <li>My Computer</li>
+            <li>Control Panel</li>
+            <li>Printers and Faxes</li>
+            <li>Run...</li>
+            <li><a href="index3.html">Exit to Website</a></li>
+          </ul>
         </div>
       </div>
 
-      <!-- Taskbar -->
-      <div class="xp-taskbar">
-        <div class="xp-start-button" onclick="toggleStartMenu()">Start</div>
-        <div class="xp-taskbar-clock" id="xp-clock"></div>
+      <!-- Footer -->
+      <div class="xp-start-menu-footer">
+        <button>Log Off</button>
+        <button>Turn Off Computer</button>
       </div>
-
-      <!-- Start Menu -->
- <div class="xp-start-menu hidden" id="xp-start-menu">
-  <ul>
-    <li>My Documents</li>
-    <li>My Recent Documents</li>
-    <li>My Pictures</li>
-    <li>My Music</li>
-    <li>My Computer</li>
-    <li>Control Panel</li>
-    <li>Printers and Faxes</li>
-    <li>Run...</li>
-    <li><a href="index3.html">Exit to Website</a></li>
-  </ul>
-</div>
-
     </div>
 
     <script src="js/xp-script.js"></script>

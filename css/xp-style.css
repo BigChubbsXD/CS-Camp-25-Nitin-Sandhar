@@ -1,6 +1,11 @@
 /* xp-style.css */
 
 /* Ensure full screen and no scroll */
+
+
+/* DESKOP */
+
+
 html, body {
   margin: 0;
   background: url('../images/xpwallpaper.jpg') no-repeat center center fixed;
@@ -50,39 +55,63 @@ html, body {
 }
 
 
+/* WINDOW */
+
+
 .xp-window {
   position: absolute;
   top: 100px;
   left: 100px;
-  width: 300px;
+  width: 360px;
   background: #ece9d8;
   border: 2px solid #000080;
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  font-family: Tahoma, sans-serif;
   z-index: 100;
 }
 
 .xp-window-header {
-  background: #000080;
+  background: linear-gradient(to bottom, #0a4ac0, #3065d1);
   color: white;
-  padding: 5px;
+  padding: 3px 8px;
   display: flex;
   justify-content: space-between;
-  cursor: move;
+  align-items: center;
   font-weight: bold;
+  font-size: 13px;
+  border-bottom: 1px solid #000;
+  height: 24px;
+}
+
+.xp-window-header span {
+  flex-grow: 1;
 }
 
 .xp-window-header button {
-  background: #c0c0c0;
-  border: 1px solid #888;
-  width: 20px;
+  background: #ece9d8;
+  color: black;
+  border: 1px solid #666;
+  width: 22px;
   height: 20px;
   font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
   cursor: pointer;
+  box-shadow: 1px 1px #fff inset;
 }
 
 .xp-window-content {
-  padding: 10px;
+  background: #f5f5f5;
+  padding: 12px;
+  font-size: 14px;
+  color: #000;
 }
+
+
+/* TASKBAR */
+
+
+
 
 /* XP Taskbar */
 .xp-taskbar {
@@ -145,40 +174,63 @@ html, body {
   padding-left: 10px;
 }
 
+
+/* START MENU */
+
+
+/* START MENU CONTAINER */
 .xp-start-menu {
   position: absolute;
-  bottom: 33px; /* aligns with top of taskbar */
+  bottom: 33px;
   left: 0;
   display: flex;
-  width: 370px;
-  height: 420px;
+  flex-direction: column;
+  width: 390px;
+  height: 430px;
   font-family: Tahoma, sans-serif;
-  box-shadow: 0 0 10px #000;
   border: 1px solid #2955a6;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  background: #ffffff;
   z-index: 1000;
-  background-color: white;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
 }
 
-.xp-start-menu.hidden {
-  display: none;
-}
-
-/* Left blue panel */
-.xp-start-menu-left {
-  width: 130px;
-  background: linear-gradient(to bottom, #3a6ea5, #1c4587);
+/* TOP BAR */
+.xp-start-menu-header {
+  height: 40px;
+  background: linear-gradient(to right, #2955a6, #1d418a);
   color: white;
   display: flex;
-  flex-direction: column;
-  padding: 10px 5px;
-  box-sizing: border-box;
-  border-right: 1px solid #ccc;
+  align-items: center;
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 14px;
+  gap: 10px;
 }
 
-.xp-start-menu-left h2 {
-  font-size: 14px;
-  margin: 5px 0;
-  text-align: center;
+.xp-start-menu-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+/* CONTENT AREA */
+.xp-start-menu-body {
+  display: flex;
+  flex: 1;
+}
+
+/* LEFT BLUE PANE */
+.xp-start-menu-left {
+  width: 140px;
+  background: linear-gradient(to bottom, #3a6ea5 0%, #1d418a 100%);
+  color: white;
+  padding: 10px 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #8ca9d4;
 }
 
 .xp-start-menu-left ul {
@@ -188,23 +240,23 @@ html, body {
 }
 
 .xp-start-menu-left li {
-  font-size: 13px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 4px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  font-size: 13px;
+  padding: 6px 6px;
+  cursor: pointer;
+  border-radius: 2px;
 }
 
 .xp-start-menu-left li:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Right white panel */
+/* RIGHT PANE */
 .xp-start-menu-right {
   flex-grow: 1;
-  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+  background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
   padding: 10px;
   box-sizing: border-box;
 }
@@ -216,38 +268,37 @@ html, body {
 }
 
 .xp-start-menu-right li {
-  font-size: 13px;
-  padding: 5px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  font-size: 13px;
+  color: #000;
+  padding: 6px;
+  border-radius: 2px;
   cursor: pointer;
-  color: black;
-  border-radius: 4px;
 }
 
 .xp-start-menu-right li:hover {
   background-color: #cce5ff;
 }
 
-/* Footer: Log Off & Turn Off */
+/* Footer bar */
 .xp-start-menu-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  height: 36px;
+  background: linear-gradient(to right, #2955a6, #123973);
   display: flex;
-  justify-content: space-between;
-  padding: 4px 8px;
-  background: linear-gradient(to right, #2955a6, #11356b);
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  gap: 10px;
+  border-top: 1px solid #8ca9d4;
 }
 
 .xp-start-menu-footer button {
   font-size: 12px;
-  padding: 4px 8px;
-  border: none;
   color: white;
-  background-color: transparent;
+  background: transparent;
+  border: none;
   cursor: pointer;
 }
 
@@ -255,72 +306,21 @@ html, body {
   text-decoration: underline;
 }
 
-
-
-
-/* Left Pane (blue background with apps) */
-.xp-start-menu::before {
-  content: '';
-  width: 100px;
-  background: linear-gradient(to bottom, #3a6ea5, #1d4c8b);
-  border-right: 1px solid #ccc;
-}
-
-
-
-/* Right Pane Content */
-.xp-start-menu ul {
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-  flex-grow: 1;
-  width: 100%;
-}
-
-.xp-start-menu ul li {
-  padding: 4px 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  color: #000;
-  border-radius: 4px;
-}
-
-.xp-start-menu ul li:hover {
-  background-color: #cce5ff;
-}
-
-/* Simulated XP Icons */
-.xp-start-menu ul li::before {
+/* Icon placeholders */
+.xp-start-menu li::before {
   content: '';
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-/* Example Icon Assignments (customize image paths) */
-.xp-start-menu ul li:nth-child(1)::before {
+/* Example icons - customize as needed */
+.xp-start-menu-right li:nth-child(1)::before {
   background-image: url('../images/folder_mydocs.png');
 }
-.xp-start-menu ul li:nth-child(2)::before {
-  background-image: url('../images/folder_recent.png');
-}
-.xp-start-menu ul li:nth-child(3)::before {
-  background-image: url('../images/folder_pictures.png');
-}
-.xp-start-menu ul li:nth-child(4)::before {
-  background-image: url('../images/folder_music.png');
-}
-.xp-start-menu ul li:nth-child(5)::before {
-  background-image: url('../images/folder_computer.png');
-}
-.xp-start-menu ul li:last-child {
-  color: red;
-}
+/* ... add more icons as before */
 .hidden {
-  display: none;
+  display: none !important;
 }

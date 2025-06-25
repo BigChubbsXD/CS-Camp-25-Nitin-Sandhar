@@ -5,6 +5,7 @@ let offsetX, offsetY;
 const xpWindow = document.getElementById("xp-window");
 const startMenu = document.getElementById("xp-start-menu");
 const clock = document.getElementById("xp-clock");
+const startButton = document.querySelector(".xp-start-button");
 
 function openWindow(title) {
   const titleBar = document.getElementById("xp-window-title");
@@ -14,13 +15,22 @@ function openWindow(title) {
   xpWindow.style.top = "100px";
 }
 
-function closeWindow() {
+function closeWindow(event) {
+  event?.stopPropagation(); // prevent event bubbling from breaking things
   xpWindow.classList.add("hidden");
 }
 
-function toggleStartMenu() {
+function toggleStartMenu(event) {
+  event?.stopPropagation(); // prevent closing immediately after opening
   startMenu.classList.toggle("hidden");
 }
+
+// Click outside start menu to close it
+document.addEventListener("click", (e) => {
+  if (!startMenu.contains(e.target) && !startButton.contains(e.target)) {
+    startMenu.classList.add("hidden");
+  }
+});
 
 function startDrag(e) {
   dragging = true;
