@@ -26,7 +26,10 @@
         <button onclick="closeWindow(event)">X</button>
       </div>
       <div class="xp-window-content">
-        <p>This is a placeholder app window.</p>
+        <div id="xp-window-content-container">
+  <!-- content will be injected here -->
+</div>
+
       </div>
     </div>
 
@@ -60,25 +63,32 @@
         </div>
 
         <!-- Right Pane: System Shortcuts -->
-        <div class="xp-start-menu-right">
-          <ul>
-            <li>My Documents</li>
-            <li>My Recent Documents</li>
-            <li>My Pictures</li>
-            <li>My Music</li>
-            <li>My Computer</li>
-            <li>Control Panel</li>
-            <li>Printers and Faxes</li>
-            <li>Run...</li>
-            <li><a href="index3.html">Exit to Website</a></li>
-          </ul>
-        </div>
+<!-- Right Pane: System Shortcuts -->
+<div class="xp-start-menu-right">
+  <ul>
+    <li onclick="openWindow('My Documents')">My Documents</li>
+    <li onclick="openWindow('My Recent Documents')">My Recent Documents</li>
+    <li onclick="openWindow('My Pictures')">My Pictures</li>
+    <li onclick="openWindow('My Music')">My Music</li>
+    <li onclick="openWindow('My Computer')">My Computer</li>
+    <li onclick="openWindow('Control Panel')">Control Panel</li>
+    <li onclick="openWindow('Printers and Faxes')">Printers and Faxes</li>
+    <li onclick="openWindow('Run')">Run...</li>
+    <li onclick="confirmExit()">Exit to Website</li>
+  </ul>
+</div>
+
       </div>
 
       <!-- Footer -->
       <div class="xp-start-menu-footer">
-        <button>Log Off</button>
-        <button>Turn Off Computer</button>
+        <button id="logoff-button">Log Off</button>
+        <div id="logout-popup" class="xp-window hidden">
+  <div class="xp-window-header"><span>Status</span></div>
+  <div class="xp-window-content" id="logout-popup-content">Logging out...</div>
+</div>
+
+        <button id="shutdown-button">Turn Off Computer</button>
       </div>
     </div>
 
