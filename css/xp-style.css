@@ -1,0 +1,326 @@
+/* xp-style.css */
+
+/* Ensure full screen and no scroll */
+html, body {
+  margin: 0;
+  background: url('../images/xpwallpaper.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* XP Desktop background fills screen */
+.xp-desktop {
+  background: url('../images/xp-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: Tahoma, sans-serif;
+  overflow: hidden;
+}
+
+/* Ensure each icon stacks vertically with spacing */
+.xp-icon {
+  position: absolute;
+  top: var(--icon-top);
+  left: 10px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.xp-icon img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+}
+
+.xp-icon span {
+  font-size: 12px;
+  /*text-shadow: 1px 1px 2px black;*/
+  color: white;
+  display: block;
+  margin-top: 4px;
+  word-wrap: break-word;
+}
+
+
+.xp-window {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  background: #ece9d8;
+  border: 2px solid #000080;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.xp-window-header {
+  background: #000080;
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  cursor: move;
+  font-weight: bold;
+}
+
+.xp-window-header button {
+  background: #c0c0c0;
+  border: 1px solid #888;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.xp-window-content {
+  padding: 10px;
+}
+
+/* XP Taskbar */
+.xp-taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background: linear-gradient(to top, #2058e0, #2a72e5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-shadow: inset 0 1px #a3c0f0;
+  border-top: 2px solid #0f3fa7;
+  font-family: Tahoma, sans-serif;
+  z-index: 999;
+}
+
+/* Start Button */
+.xp-start-button {
+  display: flex;
+  align-items: center;
+  padding: 2px 10px 2px 8px;
+  background: linear-gradient(to bottom, #3a9e00, #2e7400);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #0f3e00;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px #a5e29f, 1px 1px 2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  height: 26px;
+}
+
+.xp-start-button::before {
+  content: "";
+  background: url('../images/xp-start-icon.png') no-repeat center center;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.xp-taskbar-clock {
+  color: white;
+  font-size: 13px;
+  padding-right: 16px; /* was 8px */
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+}
+
+
+/* Task buttons placeholder (optional for future apps) */
+.xp-taskbar-apps {
+  flex: 1;
+  display: flex;
+  gap: 6px;
+  padding-left: 10px;
+}
+
+.xp-start-menu {
+  position: absolute;
+  bottom: 33px; /* aligns with top of taskbar */
+  left: 0;
+  display: flex;
+  width: 370px;
+  height: 420px;
+  font-family: Tahoma, sans-serif;
+  box-shadow: 0 0 10px #000;
+  border: 1px solid #2955a6;
+  z-index: 1000;
+  background-color: white;
+}
+
+.xp-start-menu.hidden {
+  display: none;
+}
+
+/* Left blue panel */
+.xp-start-menu-left {
+  width: 130px;
+  background: linear-gradient(to bottom, #3a6ea5, #1c4587);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+
+.xp-start-menu-left h2 {
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.xp-start-menu-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.xp-start-menu-left li {
+  font-size: 13px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.xp-start-menu-left li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Right white panel */
+.xp-start-menu-right {
+  flex-grow: 1;
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.xp-start-menu-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.xp-start-menu-right li {
+  font-size: 13px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: black;
+  border-radius: 4px;
+}
+
+.xp-start-menu-right li:hover {
+  background-color: #cce5ff;
+}
+
+/* Footer: Log Off & Turn Off */
+.xp-start-menu-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: linear-gradient(to right, #2955a6, #11356b);
+  box-sizing: border-box;
+}
+
+.xp-start-menu-footer button {
+  font-size: 12px;
+  padding: 4px 8px;
+  border: none;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.xp-start-menu-footer button:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Left Pane (blue background with apps) */
+.xp-start-menu::before {
+  content: '';
+  width: 100px;
+  background: linear-gradient(to bottom, #3a6ea5, #1d4c8b);
+  border-right: 1px solid #ccc;
+}
+
+
+
+/* Right Pane Content */
+.xp-start-menu ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.xp-start-menu ul li {
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  border-radius: 4px;
+}
+
+.xp-start-menu ul li:hover {
+  background-color: #cce5ff;
+}
+
+/* Simulated XP Icons */
+.xp-start-menu ul li::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Example Icon Assignments (customize image paths) */
+.xp-start-menu ul li:nth-child(1)::before {
+  background-image: url('../images/folder_mydocs.png');
+}
+.xp-start-menu ul li:nth-child(2)::before {
+  background-image: url('../images/folder_recent.png');
+}
+.xp-start-menu ul li:nth-child(3)::before {
+  background-image: url('../images/folder_pictures.png');
+}
+.xp-start-menu ul li:nth-child(4)::before {
+  background-image: url('../images/folder_music.png');
+}
+.xp-start-menu ul li:nth-child(5)::before {
+  background-image: url('../images/folder_computer.png');
+}
+.xp-start-menu ul li:last-child {
+  color: red;
+}
+.hidden {
+  display: none;
+}

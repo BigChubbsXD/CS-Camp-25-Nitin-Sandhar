@@ -1,37 +1,52 @@
-<!DOCTYPE html> 
-        <link rel="stylesheet" href="css/style.css">
-<html class = "darkbluebackground darkwhitetext">
-      <base href="https://bigchubbsxd.github.io/CS-Camp-25-Nitin-Sandhar/">
-    <head>
-  <div class="container">
-    <h1>Page 3</h1>
+<!DOCTYPE html>
+<html class="darkbluebackground darkwhitetext">
+  <head>
+    <meta charset="UTF-8">
     <title>Game Page</title>
-   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <style>
-    canvas {
-      display: block;
-      margin: 0 auto;
-      background: black;
-    }
-  </style>
-      </head>
+    <base href="https://bigchubbsxd.github.io/CS-Camp-25-Nitin-Sandhar/">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      canvas {
+        display: block;
+        margin: 0 auto;
+        background: black;
+      }
+      .xp-button {
+        display: inline-block;
+        margin-bottom: 1rem;
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #0078d7;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 0 5px #0078d7;
+      }
+      .xp-button:hover {
+        background-color: #0053a6;
+      }
+    </style>
+  </head>
   <body>
-    <h1>Platformer Game</h1>
-    <p>This is an endless platformer game. Press Space to jump and P to pause. Your best score resets on site refresh. <br>This game does not work on mobile. </p> 
+    <div class="container">
+      <h1>Page 3</h1>
+      <h1>Platformer Game</h1>
+      <p>This is an endless platformer game. Press Space to jump and P to pause. Your best score resets on site refresh.<br>This game does not work on mobile.</p>
       <canvas id="game" width="800" height="400"></canvas>
-  <script defer src="js/game.js"></script>
-  <br>
-    <div class = "linkbox">
-        <div class = fullwidthhr>
-<hr class="darkwhiteborder">
-</div>
-      <h1>Pages</h1>
-    <a class = "darkwhitetext" href="index.html">Go to Page 1</a>
-    <a class = "darkwhitetext" href="index2.html">Go to Page 2</a>
-    <br>
+      <script defer src="js/game.js"></script>
+      <br>
+      <div class="linkbox">
+        <div class="fullwidthhr">
+          <hr class="darkwhiteborder">
+        </div>
+           <button class="xp-button" onclick="window.location.href='xp.html'">Enter Windows XP Mode</button>
+        <h1>Pages</h1>
+        <a class="darkwhitetext" href="index.html">Go to Page 1</a>
+        <a class="darkwhitetext" href="index2.html">Go to Page 2</a>
+        <br>
+      </div>
     </div>
   </body>
-  </div>
-      
 </html>
-

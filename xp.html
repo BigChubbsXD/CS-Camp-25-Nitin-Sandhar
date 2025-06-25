@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="darkbluebackground darkwhitetext">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows XP Mockup</title>
+    <link rel="stylesheet" href="css/xp-style.css" />
+  </head>
+  <body>
+<div class="xp-icon" style="--icon-top: 20px;" onclick="openWindow('My Computer')">
+  <img src="images/mycomputer.png" alt="My Computer" />
+  <span>My Computer</span>
+</div>
+
+<div class="xp-icon" style="--icon-top: 100px;" onclick="openWindow('Recycle Bin')">
+  <img src="images/recyclebin.png" alt="Recycle Bin" />
+  <span>Recycle Bin</span>
+</div>
+
+      <!-- Application Window -->
+      <div id="xp-window" class="xp-window hidden">
+        <div class="xp-window-header" onmousedown="startDrag(event)">
+          <span id="xp-window-title">Window</span>
+          <button onclick="closeWindow()">X</button>
+        </div>
+        <div class="xp-window-content">
+          <p>This is a placeholder app window.</p>
+        </div>
+      </div>
+
+      <!-- Taskbar -->
+      <div class="xp-taskbar">
+        <div class="xp-start-button" onclick="toggleStartMenu()">Start</div>
+        <div class="xp-taskbar-clock" id="xp-clock"></div>
+      </div>
+
+      <!-- Start Menu -->
+ <div class="xp-start-menu hidden" id="xp-start-menu">
+  <ul>
+    <li>My Documents</li>
+    <li>My Recent Documents</li>
+    <li>My Pictures</li>
+    <li>My Music</li>
+    <li>My Computer</li>
+    <li>Control Panel</li>
+    <li>Printers and Faxes</li>
+    <li>Run...</li>
+    <li><a href="index3.html">Exit to Website</a></li>
+  </ul>
+</div>
+
+    </div>
+
+    <script src="js/xp-script.js"></script>
+  </body>
+</html>
