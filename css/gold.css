@@ -80,9 +80,6 @@ canvas
 
 #control-panel {
   
-  background-color:  rgba(40,40,52,100);
-  border: 2px solid rgba(144,144,144,255);
-  border-radius: 10px;
   margin-top: 2%;
   display: flex;
   justify-content: center;
@@ -91,11 +88,25 @@ canvas
 }
 
 #control-panel * {
+  margin: 5px;
+  font-size: 14px;
+}
+
+body #control-panel button {
   background-color:  rgba(40,40,52,100);
   border: 2px solid rgba(144,144,144,255);
   border-radius: 10px;
-  margin: 5px;
-  font-size: 14px;
+
+}
+
+
+
+/* Golden mode override */
+body #control-panel input[type="color"] {
+  background-color:  rgba(40,40,52,100);
+  border: 2px solid rgba(144,144,144,255);
+  border-radius: 10px;
+
 }
 
 .fullwidthhr {
