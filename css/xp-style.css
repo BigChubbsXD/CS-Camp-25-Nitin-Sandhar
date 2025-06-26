@@ -68,10 +68,12 @@ html, body {
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
   font-family: Tahoma, sans-serif;
   z-index: 100;
+    border-radius: 10px;
+  border: 2px solid #0000cc;
 }
 
 .xp-window-header {
-  background: linear-gradient(to bottom, #0a4ac0, #3065d1);
+  background: linear-gradient(to top, #2058e0, #2a72e5);
   color: white;
   padding: 3px 8px;
   display: flex;
@@ -81,6 +83,9 @@ html, body {
   font-size: 13px;
   border-bottom: 1px solid #000;
   height: 24px;
+  border: 1px solid #0000cc;
+  user-select: none;
+  border-radius: 5px;
 }
 
 .xp-window-header span {
@@ -88,8 +93,8 @@ html, body {
 }
 
 .xp-window-header button {
-  background: #ece9d8;
-  color: black;
+  background: red;
+  color: white;
   border: 1px solid #666;
   width: 22px;
   height: 20px;
@@ -98,6 +103,8 @@ html, body {
   line-height: 16px;
   cursor: pointer;
   box-shadow: 1px 1px #fff inset;
+  border-radius: 5px;
+  border: 1px solid white;
 }
 
 .xp-window-content {
@@ -228,7 +235,7 @@ html, body {
   width: 390px;
   height: 430px;
   font-family: Tahoma, sans-serif;
-  border: 1px solid #2955a6;
+  border: 2px solid #0000cc;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   background: #ffffff;
   z-index: 1000;
@@ -239,7 +246,7 @@ html, body {
 /* TOP BAR */
 .xp-start-menu-header {
   height: 40px;
-  background: linear-gradient(to right, #2955a6, #1d418a);
+  background: linear-gradient(to top, #2058e0, #2a72e5);
   color: white;
   display: flex;
   align-items: center;
@@ -247,6 +254,7 @@ html, body {
   font-weight: bold;
   font-size: 14px;
   gap: 10px;
+  border: 2px solid inear-gradient(to top, #2058e0, #2a72e5);
 }
 
 .xp-start-menu-header img {
